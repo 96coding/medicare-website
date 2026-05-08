@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ANGEL✨PHARMACY💊</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body>
+ <div class="top-bar">
+<div class="logo">
+    <img src="images/cross.png" alt="Logo">
+</div>
+
+<div class="overlay">
+    <div class="center-content">
+    <h1 class="logo-text">
+        Angel Pharmacy <span class="plus">✚</span>
+    </h1>
+</div> 
+
+<div class="status-card" id="statusCard">
+    <div id="statusText">Checking...</div>
+    <div id="hoursText">Opening hours: 08:00 - 22:00</div>
+</div>
+
+<div class="center"></div>
+<div class="cards-container">
+
+    <!-- HOME -->
+    <div class="card">
+        <h3>🏠 Home</h3>
+        <p>Welcome to Medicare++ Pharmacy. Your health is our priority.We are committed to delivering not just medicines, but care, guidance, and peace of mind.</p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="card">
+        <h3>💊 Services</h3>
+        <p>✔ Medicines<br>✔ First Aid<br>✔ Injections<br>✔ Advice</p>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="card">
+        <h3>🏥 About</h3>
+        <p>Trusted pharmacy providing safe and affordable healthcare.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="card contact-card">
+        <h3>📞 Contact</h3>
+        <p>Tap below to call us instantly</p>
+
+        <a href="tel:0625539712" class="call-btn">
+            📞 Call Now
+        </a>
+    </div>
+
+</div>
+<script>
+function updateStatus() {
+    const card = document.getElementById("statusCard");
+    const text = document.getElementById("statusText");
+
+    const now = new Date();
+    const hour = now.getHours();
+
+    // Opening hours: 08:00 - 22:00
+    const openHour = 8;
+    const closeHour = 22;
+
+    if (hour >= openHour && hour < closeHour) {
+        text.innerHTML = "🟢 OPENED";
+        card.classList.add("open");
+        card.classList.remove("closed");
+    } else {
+        text.innerHTML = "🔴 CLOSED";
+        card.classList.add("closed");
+        card.classList.remove("open");
+    }
+}
+
+// run immediately
+updateStatus();
+
+// update every minute
+setInterval(updateStatus, 60000);
+</script>
+</div>
+</body>
+</html>
