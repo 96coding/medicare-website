@@ -1,95 +1,670 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ANGEL✨PHARMACY💊</title>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Angel Pharmacy+ | Elite Healthcare Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+        :root {
+            /* --- FRESH BRIGHT MEDICAL LIGHT PALETTE --- */
+            --bg-main: #f4f7fc;
+            --bg-section-alt: #eefdf7;
+            --card-bg: #fff;
+            --panel-border: rgba(14, 165, 233, 0.2);
+            --brand-primary: #0284c7;
+            --brand-secondary: #0369a1;
+            --brand-accent: #10b981;
+            --brand-danger: #ef4444;
+            --text-heading: #0f172a;
+            --text-body: #334155;
+            --shadow-premium: 0 10px 30px rgba(15, 23, 42, 0.06);
+            --shadow-hover: 0 20px 40px rgba(2, 132, 199, 0.12);
+            --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-smooth: all 0.25s ease
+        }
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            color: var(--text-body);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
+            background-image: linear-gradient(rgba(244, 247, 252, 0.96), rgba(244, 247, 252, 0.98)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuA4K2rWfKyN1eS2DGd5zT6rlonmORWYIYrc8y2tFtNpQ8zQxA0ztqqnNUoBPJMZbu5HSX_5zrIx6GwmHc1bxoMZn58BXE5aITobIq5O0YLbYESBBwxANfUJucUb6j89459zsXh_i_Fw4IqqMgZe6XqJcQ-pKfqdV0VTtVJ6jLStlOqLEdp-RQGzQd-Agh8hFxzUxDlqvna224JwBFbxgfvjEC7RwMmQx8NEhnR49LZBfSbjAihXOi_D);
+            background-size: cover, 40%;
+            background-position: center, bottom right;
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+
+        /* --- STICKY HEADER BLOCK --- */
+        .sticky-header-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05)
+        }
+
+        /* --- PRESTIGE TOP MARQUEE TICKER BAR --- */
+        .welcome-marquee-bar {
+            background: #0f172a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            width: 100%
+        }
+
+        .marquee-viewport {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: slide-text 20s linear infinite
+        }
+
+        .marquee-text {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            white-space: nowrap;
+            padding-right: 40px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .status-open { color: var(--brand-accent) }
+        .status-closed { color: var(--brand-danger) }
+
+        @keyframes slide-text {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* --- NAVIGATION --- */
+        header.premium-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 5%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--brand-primary)
+        }
+
+        .brand-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none
+        }
+
+        .brand-logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            letter-spacing: -0.5px
+        }
+
+        .brand-logo-text span { color: var(--brand-primary) }
+
+        .cta-nav-button {
+            background: var(--brand-primary);
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-viewport {
+            padding: 60px 5% 80px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            position: relative;
+            z-index: 10;
+            min-height: 600px;
+            justify-content: center;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCBNXK3FTm8Lp1JvSVnXdcjvthOxZ3eq63hdsldoBQCP0Pm68CdPNwBJNLdoDD_RwQON4yca64UlDj5W0u8_CRPhg0BLNNzS5LQ2SY9eg0JEN7styMgZzZzNR2o12xbaADRkgl3AlUF-X8R3szUWo_i-z5ydTGvWXo53-QDW8F1f2oinIN-lJAR4aI9F_JICdAVFHKcvNfNZBUSAPLgclC9t3FbPJoISVVYSoKEpU6Zec4q27LVOUGncgDrGIbNYSZBg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-editorial {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start
+        }
+
+        .live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1.5px solid var(--brand-accent);
+            padding: 6px 14px;
+            border-radius: 100px;
+            color: var(--brand-accent);
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--brand-accent);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite ease-in-out
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.85); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.85); opacity: 0.6; }
+        }
+
+        .hero-editorial h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-heading);
+            letter-spacing: -1.5px;
+            margin-bottom: 20px
+        }
+
+        .hero-editorial h1 span { color: var(--brand-primary) }
+
+        .hero-editorial p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            margin-bottom: 32px;
+            font-weight: 500
+        }
+
+        .action-cluster {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%
+        }
+
+        .btn-primary-action {
+            background: var(--brand-primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary-action {
+            background: var(--brand-accent);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        /* --- VIEWPORT STRUCTURAL WRAPPING --- */
+        section.premium-viewport {
+            padding: 60px 5%;
+            position: relative;
+            z-index: 10
+        }
+
+        .section-headline-block {
+            margin-bottom: 40px
+        }
+
+        .section-headline-block span {
+            color: var(--brand-primary);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 8px
+        }
+
+        .section-headline-block h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -1px;
+            line-height: 1.2
+        }
+
+        /* --- GRID SYSTEM --- */
+        .premium-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px
+        }
+
+        .premium-card {
+            background: var(--card-bg);
+            border: 2px solid var(--panel-border);
+            padding: 32px 24px;
+            border-radius: 20px;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-premium)
+        }
+
+        .card-icon-frame {
+            width: 48px;
+            height: 48px;
+            background: rgba(2, 132, 199, 0.1);
+            border: 2px solid rgba(2, 132, 199, 0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px
+        }
+
+        .card-icon-frame i {
+            font-size: 1.3rem;
+            color: var(--brand-primary)
+        }
+
+        .premium-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 12px;
+            letter-spacing: -0.4px
+        }
+
+        .premium-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            font-weight: 500
+        }
+
+        .bg-wrap-offers {
+            background-color: var(--bg-section-alt)
+        }
+
+        .premium-card.accent-variant {
+            border-color: rgba(16, 185, 129, 0.2)
+        }
+
+        .premium-card.accent-variant .card-icon-frame {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.25)
+        }
+
+        .premium-card.accent-variant .card-icon-frame i {
+            color: var(--brand-accent)
+        }
+
+        /* --- DOCKED ACTIONS --- */
+        .docked-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 2000
+        }
+
+        .action-pill-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.2);
+            text-decoration: none
+        }
+
+        .action-pill-icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff
+        }
+
+        .pill-whatsapp { background: var(--brand-accent) }
+        .pill-phone { background: var(--brand-primary) }
+
+        /* --- FOOTER --- */
+        footer.corporate-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 60px 5% 40px;
+            border-top: 4px solid var(--brand-primary)
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px
+        }
+
+        .footer-brand-summary h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px
+        }
+
+        .footer-brand-summary h4 span { color: var(--brand-primary) }
+
+        .footer-brand-summary p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 24px
+        }
+
+        .badge-verified {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1.5px solid var(--brand-accent);
+            color: var(--brand-accent);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: inline-block
+        }
+
+        .footer-col h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--brand-primary);
+            padding-left: 10px
+        }
+
+        .footer-links-list li {
+            margin-bottom: 14px;
+            list-style: none
+        }
+
+        .footer-links-list a, .footer-links-list p {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .footer-links-list i {
+            color: var(--brand-primary);
+            font-size: 1.1rem;
+            width: 20px
+        }
+
+        .footer-base {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.8rem
+        }
+
+        /* --- RESPONSIVE OVERRIDES --- */
+        @media (min-width: 769px) {
+            header.premium-nav {
+                padding: 18px 8%
+            }
+
+            .hero-viewport {
+                padding: 100px 8%;
+                min-height: 700px;
+            }
+
+            .hero-editorial h1 {
+                font-size: 4.2rem;
+                max-width: 700px
+            }
+
+            .hero-editorial p {
+                font-size: 1.25rem;
+                max-width: 600px
+            }
+
+            .action-cluster {
+                flex-direction: row;
+                width: auto
+            }
+
+            .btn-primary-action, .btn-secondary-action {
+                width: auto;
+                padding: 18px 40px;
+            }
+
+            .premium-viewport {
+                padding: 100px 8%
+            }
+
+            .premium-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .bg-wrap-offers .premium-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1.5fr
+            }
+
+            .section-headline-block h2 {
+                font-size: 2.8rem
+            }
+        }
+    </style>
 </head>
-
-
-
 <body>
- <div class="top-bar">
-<div class="logo">
-    <img src="images/cross.png" alt="Logo">
+<div class="sticky-header-container">
+<div class="welcome-marquee-bar">
+<div class="marquee-viewport">
+<div class="marquee-track" id="marquee-live-track"><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span><span class="marquee-text status-open"><i class="fa-solid fa-circle-check"></i> OPEN // WELCOME • </span></div>
 </div>
-
-<div class="overlay">
-    <div class="center-content">
-    <h1 class="logo-text">
-        Angel Pharmacy <span class="plus">✚</span>
-    </h1>
-</div> 
-
-<div class="status-card" id="statusCard">
-    <div id="statusText">Checking...</div>
-    <div id="hoursText">Opening hours: 08:00 - 22:00</div>
 </div>
-
-<div class="center"></div>
-<div class="cards-container">
-
-    <!-- HOME -->
-    <div class="card">
-        <h3>🏠 Home</h3>
-        <p>Welcome to Medicare++ Pharmacy. Your health is our priority.We are committed to delivering not just medicines, but care, guidance, and peace of mind.</p>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="card">
-        <h3>💊 Services</h3>
-        <p>✔ Medicines<br>✔ First Aid<br>✔ Injections<br>✔ Advice</p>
-    </div>
-
-    <!-- ABOUT -->
-    <div class="card">
-        <h3>🏥 About</h3>
-        <p>Trusted pharmacy providing safe and affordable healthcare.</p>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="card contact-card">
-        <h3>📞 Contact</h3>
-        <p>Tap below to call us instantly</p>
-
-        <a href="tel:0625539712" class="call-btn">
-            📞 Call Now
+<header class="premium-nav">
+<a class="brand-logo-block" href="#">
+<div class="brand-logo-text">Angel <span class="">Pharmacy</span></div>
+</a>
+<a class="cta-nav-button" href="#contact">
+<i class="fa-solid fa-location-dot"></i> Find Us
         </a>
-    </div>
-
+</header>
 </div>
+<main>
+<section class="hero-viewport" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDJt6tAnaK7LgxPJtHPMqUnfsFRRbzvFREtwroDkoan8q1OwMrCBbc8qPuQ37VWjt5-lvh_fV4_XP1f_Im3rr8Xi8MI_fFNhEsDR9maYlDYZkryMwzK1fwI8G1UDgLWTbORjzwOSSxYlVUUqp0JbmXzR9KjQ5rBavMXVXUEMs-oaY69IE_aI5wuAWuDw-sLYhIqDDCKpnhy6hMJcTmzz8rOfYmEGl7TjB6AS3q0CgqfQuJ4H6bxge6y&quot;);">
+<div class="hero-editorial">
+<div class="live-pill">
+<span class="pulse-dot"></span> Registered Pharmacy • Biharamulo
+            </div>
+<h1 class=""><span class="">Premium Care.</span><br>Genuine Medicine.</h1>
+<p class="">Your fully registered partner for TMDA-approved pharmaceuticals and certified wellness tracking across the Kagera community.</p>
+<div class="action-cluster">
+<a class="btn-primary-action" href="#services">
+<i class="fa-solid fa-flask-vial"></i> Our Services
+                </a>
+<a class="btn-secondary-action" href="https://wa.me/255625539712" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Ask a Question
+                </a>
+</div>
+</div>
+</section>
+<section class="premium-viewport" id="services">
+<div class="section-headline-block">
+<span class="">01 / Retail</span>
+<h2 class="">Pharmaceutical Services</h2>
+</div>
+<div class="image-container" style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(14, 165, 233, 0.2); box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); background: #fff;"><img alt="Medical Health Infographic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMDMMbmrOkLfTMYSgvhtymNvkGlPgsL8DD5Y8BLqNVn1yffrU8a_HGcqaFGY8YJcXRLTukAhv5MPyaCWXWyKQEisfBv2GddXSEsXkIXmeuK1HDJa49_6i0iJGqhEKlUeo8D4rM7wBW288Q3gXt9utULlUF1SJR9BiUrmIF8tghK0gZOMiUiq-Hl3nwQKFsX9KlOH4FNPxx9Ifb6EgYEbWwJPmlDe4cJjXy0VmBpCi_sR6BNRB0a8L3P_66iv4DErpULg" style="width: 100%; height: auto; display: block;" class=""></div><div class="premium-grid">
+<div class="premium-card">
+<div>
+<div class="card-icon-frame"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+<h3 class="">Medicine Counseling</h3>
+<p class="">Professional dispensing of authentic prescription medicines managed by registered superintendents.</p>
+</div>
+</div>
+<div class="premium-card">
+<div>
+<div class="card-icon-frame"><i class="fa-solid fa-heart-pulse"></i></div>
+<h3 class="">Wellness Tracking</h3>
+<p class="">Automated vascular blood pressure checks and standard weight-to-height tracking profiles.</p>
+</div>
+</div>
+<div class="premium-card">
+<div>
+<div class="card-icon-frame"><i class="fa-solid fa-baby"></i></div>
+<h3 class="">Family Health</h3>
+<p class="">Verified prenatal supplements and TMDA-registered medical supplies for maternal and neonatal care.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="bg-wrap-offers">
+<section class="premium-viewport" id="offers">
+<div class="section-headline-block">
+<span class="">02 / Community</span>
+<h2 class="">Integrated Programs</h2>
+</div>
+<div class="premium-grid">
+<div class="premium-card accent-variant">
+<div>
+<div class="card-icon-frame"><i class="fa-solid fa-file-medical"></i></div>
+<h3 class="">Adherence Support</h3>
+<p class="">Structured instructions on drug-food interactions and medicine storage safety from our experts.</p>
+</div>
+</div>
+<div class="premium-card accent-variant">
+<div>
+<div class="card-icon-frame"><i class="fa-solid fa-truck-ramp-box"></i></div>
+<h3 class="">Local Logistics</h3>
+<p class="">Safe transport for medical accessories and wellness orders exceeding 30,000 TZS in Biharamulo.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="docked-actions">
+<a aria-label="WhatsApp Dispatch" class="action-pill-wrapper" href="https://wa.me/255625539712" target="_blank">
+<div class="action-pill-icon pill-whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+</a>
+<a aria-label="Direct Phone Link" class="action-pill-wrapper" href="tel:+255625539712">
+<div class="action-pill-icon pill-phone"><i class="fa-solid fa-phone"></i></div>
+</a>
+</div>
+<footer class="corporate-footer" id="contact">
+<div class="footer-grid">
+<div class="footer-brand-summary">
+<h4 class="">Angel <span class="">Pharmacy+</span></h4>
+<p class="">Advancing regional pharmaceutical infrastructure with authentic operational performance.</p>
+<div class="badge-verified">TMDA &amp; PC COMPLIANT</div>
+</div>
+<div class="footer-col">
+<h5 class="">Contact Us</h5>
+<ul class="footer-links-list">
+<li class=""><a href="tel:+255625539712" class=""><i class="fa-solid fa-phone"></i> +255 625 539 712</a></li>
+<li class=""><p class=""><i class="fa-solid fa-envelope"></i> info@angelpharmacy.co.tz</p></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 class="">Our Location</h5>
+<ul class="footer-links-list">
+<li class=""><p class=""><i class="fa-solid fa-map-location-dot"></i> Biharamulo Town, Kagera, Tanzania</p></li>
+<li class=""><p class=""><i class="fa-solid fa-door-open"></i> 08:00 AM - 10:00 PM Daily</p></li>
+</ul>
+</div>
+</div>
+<div class="footer-base">
+<p class="">© 2026 Angel Pharmacy Network.</p>
+<p class="">Operational Transparency Node Verified.</p>
+</div>
+</footer>
 <script>
-function updateStatus() {
-    const card = document.getElementById("statusCard");
-    const text = document.getElementById("statusText");
+    function initializeWelcomeMarquee() {
+        const currentHour = new Date().getHours();
+        const trackContainer = document.getElementById('marquee-live-track');
+        
+        let customMessage = "";
+        let statusStyleClass = "";
 
-    const now = new Date();
-    const hour = now.getHours();
+        if (currentHour >= 8 && currentHour < 22) {
+            customMessage = "<i class='fa-solid fa-circle-check'></i> OPEN // WELCOME &bull; ";
+            statusStyleClass = "status-open";
+        } else {
+            customMessage = "<i class='fa-solid fa-circle-xmark'></i> CLOSED // VISIT AT 8AM &bull; ";
+            statusStyleClass = "status-closed";
+        }
 
-    // Opening hours: 08:00 - 22:00
-    const openHour = 8;
-    const closeHour = 22;
-
-    if (hour >= openHour && hour < closeHour) {
-        text.innerHTML = "🟢 OPENED";
-        card.classList.add("open");
-        card.classList.remove("closed");
-    } else {
-        text.innerHTML = "🔴 CLOSED";
-        card.classList.add("closed");
-        card.classList.remove("open");
+        const repeatCount = window.innerWidth > 768 ? 15 : 8;
+        const repeatedText = `<span class="marquee-text ${statusStyleClass}">${customMessage}</span>`.repeat(repeatCount);
+        trackContainer.innerHTML = repeatedText;
     }
-}
-
-// run immediately
-updateStatus();
-
-// update every minute
-setInterval(updateStatus, 60000);
+    
+    initializeWelcomeMarquee();
+    window.addEventListener('resize', initializeWelcomeMarquee);
 </script>
-</div>
-</body>
-</html>
+
+
+</body></html>
